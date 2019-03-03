@@ -18,6 +18,10 @@
 <div id="content" role="main">
     <section class="row colset-2-its">
         <h1>Find Your Weather</h1>
+        <sec:ifAllGranted roles='ROLE_ADMIN'>
+            Admin Create Users
+            <g:link controller="User">Create User</g:link>
+        </sec:ifAllGranted>
 
         <div class="mysearch" role="presentation">
 
