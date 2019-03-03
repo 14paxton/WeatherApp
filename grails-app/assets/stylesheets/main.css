@@ -581,14 +581,15 @@ a.skip {
 }
 
 .grails-logo-container {
-    background: #7c7c7c no-repeat 50% 30%;
+    background: #d05386 no-repeat 50% 30%;
     margin-bottom: 20px;
-    color: white;
+    color: #d05386;
     height:300px;
     text-align:center;
 }
 
 img.grails-logo {
-    height:340px;
+    height: 310px;
     margin-top:-10px;
 }
+
