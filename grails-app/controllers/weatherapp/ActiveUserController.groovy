@@ -22,7 +22,7 @@ class ActiveUserController {
             redirect(controller: "AdminDashboard")
         }
 
-         [locations: locations, currentUser: currentUser]
+         [locations: locations, currentUser: currentUser, locationCount: locations.count()]
 
     }
 
