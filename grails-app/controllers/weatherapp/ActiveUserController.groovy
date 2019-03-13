@@ -14,13 +14,15 @@ class ActiveUserController {
 
         def currentUser = springSecurityService.currentUser
 
+        def locations = Location.findAllByUser(currentUser)
+
         if (SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')) {
 
 
             redirect(controller: "AdminDashboard")
         }
 
-        respond(currentUser: currentUser)
+         [locations: locations, currentUser: currentUser]
 
     }
 

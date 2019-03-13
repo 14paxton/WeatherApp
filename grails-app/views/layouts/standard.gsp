@@ -12,20 +12,31 @@
 <body style="padding-top: 90px">
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/#"><asset:image src="weathermini.png" width="80" height="80" alt="tornado"/></a>
+    <sec:ifLoggedIn>
+        <a class="navbar-brand" href="/ActiveUser/index"><asset:image src="weathermini.png" width="80" height="80" alt="tornado"/></a>
+    </sec:ifLoggedIn>
+    <sec:ifNotLoggedIn>
+        <a class="navbar-brand" href="/#"><asset:image src="weathermini.png" width="80" height="80" alt="tornado"/></a>
+    </sec:ifNotLoggedIn>
+
 
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+<sec:ifNotLoggedIn>
+    <li class="nav-item">
                 <a class="nav-link" href="${createLink(controller: 'signUp', action: 'join')}">Sign up</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}">Login</a>
             </li>
+</sec:ifNotLoggedIn>
+<sec:ifLoggedIn>
+
             <li class="nav-item">
                 <a class="nav-link" href="${createLink(controller: 'logoff')}">Logout</a>
             </li>
+</sec:ifLoggedIn>
 
         </ul>
 

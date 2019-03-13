@@ -20,10 +20,14 @@
         <h1>You Have Logged In ${currentUser.email}!!!</h1>
 
 
-        <div class="mysearch" role="presentation">
+        <div id="list-locations" class="content scaffold-list" role="main">
+            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
 
+            <f:table collection="${locations}" />
 
-
+            <div class="pagination">
+                <g:paginate total="${bookCount ?: 0}" />
+            </div>
         </div>
 
 

@@ -4,11 +4,14 @@ import app.admin.security.Role
 import app.admin.security.User
 import app.admin.security.UserRole
 
+import java.time.LocalDate
+import java.time.LocalDateTime
+
 class BootStrap {
 
     def init = { servletContext ->
 
-        //populateUsers()
+        populateUsers()
 
         if (Environment.current == Environment.TEST) {
             populateUsers()
@@ -22,14 +25,32 @@ class BootStrap {
         def adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError:true)
         def userRole = new Role(authority: 'ROLE_USER').save(failOnError:true)
 
-        def adminUser = new User(email: "admin@gmail.com", password: "Password123!")
-        def userUser = new User(email: "user@gmail.com", password: "Password123!")
+        def adminUser = new User(email: "admin@gmail.com", password: "Admin123")
+        def userUser = new User(email: "user@gmail.com", password: "User123")
 
         adminUser.save(failOnError:true)
         userUser.save(failOnError:true)
 
         UserRole.create adminUser, adminRole
         UserRole.create userUser, userRole
+
+        Date date = new Date()
+
+
+        def locations = ['lincoln', 'omaha', 'council-tucky', 'kansas city', 'stuart', 'oneil', 'norfolk', 'new york']
+
+
+
+
+        locations.each {
+
+            new Location(user: userUser, location: it, createDate: date).save(failOnError:true)
+
+        }
+
+        //  def  xy =  new Location(user: userUser, location: "lincoln", createDate: date).save(failOnError:true)
+
+
 
         UserRole.withSession {
             it.flush()

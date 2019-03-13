@@ -3,6 +3,7 @@ package app.admin.security
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
+import weatherapp.Location
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
@@ -17,6 +18,8 @@ class User implements Serializable {
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
+
+    static hasMany = [locations: Location]
 
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
