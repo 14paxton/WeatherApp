@@ -12,6 +12,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
+	[pattern: '/activeUser/**',  access: ['permitAll']],
+	[pattern: '/adminDashboard/**', access: ['ROLE_ADMIN']],
 	[pattern: '/user/**',        access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
@@ -21,6 +23,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']]
 ]
+
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/ActiveUser/index'
 
 grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/assets/**',      filters: 'none'],

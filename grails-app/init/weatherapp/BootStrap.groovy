@@ -22,8 +22,8 @@ class BootStrap {
         def adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError:true)
         def userRole = new Role(authority: 'ROLE_USER').save(failOnError:true)
 
-        def adminUser = new User(email: "dflute@gmail.com", password: "Password123!")
-        def userUser = new User(email: "tuser@gmail.com", password: "Password123!")
+        def adminUser = new User(email: "admin@gmail.com", password: "Password123!")
+        def userUser = new User(email: "user@gmail.com", password: "Password123!")
 
         adminUser.save(failOnError:true)
         userUser.save(failOnError:true)

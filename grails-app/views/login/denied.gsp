@@ -1,14 +1,16 @@
-<html>
-
+s<html>
 <head>
-    <meta name="layout" content="${gspLayout ?: 'main'}"/>
-    <title><g:message code='springSecurity.denied.title' /></title>
+    <meta name="layout" content="standard"/>
+    <title>AsciiBooks - Access Denied</title>
 </head>
 
 <body>
-<div class="body">
-    <div class="errors"><g:message code='springSecurity.denied.message' /></div>
-</div>
-</body>
 
+<div class="container">
+    <div class="row">
+        <div class="alert alert-error" role="alert"><g:message code='springSecurity.denied.message' /></div>
+    </div>
+</div>
+
+</body>
 </html>

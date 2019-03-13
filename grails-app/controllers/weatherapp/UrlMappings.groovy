@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/indexGrailsInfo"(view:"/indexGrailsInfo")
+
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
