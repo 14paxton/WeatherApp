@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
-    <a class="navbar-brand" href="/#"><asset:image src="weatherLogo.png" width="80" height="80" alt="tornado"/></a>
+    <a class="navbar-brand" href="/#"><asset:image src="weathermini.png" width="80" height="80" alt="tornado"/></a>
 
     <g:link controller='login'>
     <button type="button">Login</button>
